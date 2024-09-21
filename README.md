@@ -1,2 +1,2 @@
-# React-Notes
-Awesomedonut's notes on React!
+Awesomedonut's notes on various Computer Science topics :D
+
