@@ -7,7 +7,15 @@ ex: fast, real time app -> C++ solution
 deep learning, img processing -> python (many DL frameworks use python)
 
 why MATLAB?
+usefl for lin alg, espec for huge matrices and complex lin alg solutions
+very convinient and easy for quickstarts
+doesnt require other installations
 
+(aside: openCV exists. open comp vision library, covers most stuff u can do w MATLAB)
+
+important: select a coding environment and make it ur home
+
+MATLAB -> glorified calculator
 
 How we look at images in MATLAB (and digitally in general)
 
