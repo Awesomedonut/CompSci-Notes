@@ -1,6 +1,6 @@
-## 1: Images and Colours
+# Images and Colours
 
-# Intro to MATLAB
+## Intro to MATLAB
 
 many diff and useful tools for img processing and comp vision, used for diff purposes
 ex: fast, real time app -> C++ solution
@@ -28,4 +28,24 @@ alpha channels: how we represent transparancey in images
 
 
 
-## 2: Image Filtering
+# Image Filtering
+
+# Edge Detection
+
+# Deep Learning
+
+# Signals & Images
+
+# Sampling & Aliasing
+
+# Harris Corner Detection
+
+# Feature Invariane, Detection, and Matching
+
+# Transformations & Image Alignment
+
+# RANSAC
+
+# Image Segmentation
+
+# Optical Flow
