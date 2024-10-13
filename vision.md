@@ -72,6 +72,14 @@ Here’s a summary of the theoretical knowledge extracted from the lecture trans
   - **RGB**: Most intuitive for humans, since it reflects how we perceive color. However, it is inefficient for image encoding since the channels contain similar information.
   - **YCBCR**: Separates brightness (illumination) from color information. Used for efficient transmission (e.g., TV broadcasts).
   - **HSV (Hue, Saturation, Value)**: A color space that aligns better with human perception, often used in image editing applications.
+saturation vs value: sat is intensity, ie low sat means it looks washed out and high sat means it looks super vivid
+val is brightness, ie low val is black and high val is as light as it goes (closer to white)
+  hgih sat high val: bright and vivid
+  high sat low val: dark colours but vivid (deep or rich colour)
+  low sat high val: basically white, light but washed out aka pastel
+  low sat low val: washed out grayish colour, dull, blackish
+
+
   - **LAB Color Space**: Another space for representing colors, which can be used for color-based segmentation.
 
 ### Image Histograms:
