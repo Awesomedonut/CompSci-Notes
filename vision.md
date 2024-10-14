@@ -100,6 +100,67 @@ The theoretical knowledge covered focuses on color perception, image representat
 
 # Image Filtering
 
+### Image Filtering: Theoretical Notes
+
+#### 1. **Introduction to Image Filtering**
+   - **Image Filtering**: A process applied to images to enhance them or extract useful information. This lecture covers:
+     - Box filters
+     - Gaussian filters
+     - Median filtering (non-linear)
+     - Image morphology
+
+#### 2. **Box Filter**
+   - **Box Kernel**: A simple type of filter where all elements are equal. It is called a box filter because, when plotted, it resembles a box.
+   - **Normalization**: It is important to normalize kernels so that the sum of all elements equals 1, ensuring that the filtered image maintains the original image's intensity range.
+   - **Cross-Correlation**: A method of filtering where a kernel is applied across the signal or image to check how well the two match.
+   - **Convolution**: A more widely used operation in image processing than cross-correlation. In convolution, the kernel is flipped before applying, and it has useful mathematical properties:
+     - **Commutative**: Order of operations doesn’t matter.
+     - **Associative**: Allows combining filters before applying them, saving computation.
+     - **Distributive over addition**: Useful for certain image processing tasks.
+   - **Spatial Domain vs. Frequency Domain**: Convolution in the spatial domain is equivalent to multiplication in the frequency domain.
+
+#### 3. **Gaussian Filter**
+   - **Gaussian Kernel**: A kernel derived from the Gaussian (normal) distribution, which is a commonly seen distribution in nature (also known as the Bell curve).
+   - **Characteristics of Gaussian**: 
+     - Defined by the standard deviation (σ). 
+     - Convolving two Gaussians results in another Gaussian.
+     - Gaussian filtering is useful for **denoising** images by smoothing out high-frequency noise.
+   - **Separable Filters**: The Gaussian filter can be separated into two 1D filters, reducing computational complexity:
+     - Instead of using a large 2D kernel, the image is filtered along one direction (e.g., x-axis), and then along the other direction (e.g., y-axis).
+     - This reduces the number of operations significantly, especially for larger kernels.
+   
+#### 4. **Image Denoising**
+   - **Noise in Images**: Caused by various factors such as sensor limitations or lighting conditions. 
+   - **Box vs. Gaussian Filters**: Both can be used to blur and reduce noise, but the Gaussian filter provides a more natural-looking blur compared to the box filter, which can produce unnatural artifacts.
+   - **Denoising Application**: Helps reduce noise while preserving essential features like edges.
+
+#### 5. **Image Sharpening**
+   - **Sharpening Process**: Emphasizes edges by adding back the difference between the original image and the blurred image (the blurred image contains the smoother content, and the difference highlights the edges).
+   - **Edge Detection**: The difference between the original and the blurred image can be used to extract edges, which can then be added back to strengthen the image's sharpness.
+
+#### 6. **Median Filtering**
+   - **Non-Linear Filtering**: Unlike linear filters (box, Gaussian), the median filter is a non-linear process that replaces each pixel's value with the median value of its neighboring pixels.
+   - **Noise Removal**: Particularly effective for removing **salt and pepper noise** (randomly occurring black and white pixels) because the median filter chooses the central value and discards extreme pixel values (0 or 1).
+   - **Application of Median Filter**: Commonly used in scenarios where pixel values are either completely black or white due to sensor defects.
+
+#### 7. **Image Morphology**
+   - **Binary Maps**: Image morphology typically deals with black-and-white (binary) images, where pixels are either 0 (black) or 1 (white).
+   - **Useful Operations**:
+     - **Erosion**: Shrinks the white regions in an image. It removes pixels on the boundaries of white regions, making objects in the image smaller.
+     - **Dilation**: Expands the white regions in an image, adding pixels to the boundaries, making objects larger.
+     - **Opening (imopen)**: Erosion followed by dilation. Used to remove small objects from the image while preserving the shape and size of larger objects.
+     - **Closing (imclose)**: Dilation followed by erosion. Used to fill small holes in the image while keeping the overall shape of objects intact.
+
+#### 8. **Bilateral Filtering (Further Reading)**
+   - **Edge-Aware Filters**: Filters like the bilateral filter preserve edges while reducing noise. Unlike linear filters, these filters do not treat all regions of an image equally, helping to preserve important details like edges.
+   - **Application in Image Processing**: Bilateral filters are crucial in tasks like **image denoising** where preserving edges is essential for retaining important image details.
+
+---
+
+These notes provide a comprehensive theoretical overview of the key concepts of image filtering without MATLAB-specific content. Key topics include different types of filters (box, Gaussian, median), the importance of kernel normalization, separable filters, and image denoising and sharpening. Advanced concepts like bilateral filtering and image morphology (erosion, dilation) are also included.
+
+
+
 # Edge Detection
 
 # Deep Learning
