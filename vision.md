@@ -163,6 +163,65 @@ These notes provide a comprehensive theoretical overview of the key concepts of 
 
 # Edge Detection
 
+### Lecture Notes: Edge Detection
+
+1. **Overview of Topics:**
+   - Introduction to computing image gradients (derivatives) using convolution.
+   - Discussion of the canny edge detection method.
+   - Introduction to the Laplacian of Gaussian filter.
+
+2. **Edges in Images:**
+   - Edges occur due to depth differences, surface color changes, shadows (illumination), and surface discontinuities.
+   - Detecting edges provides significant information about image content.
+
+3. **Image Gradient Calculation:**
+   - Use of grayscale images for gradient and edge detection.
+   - Sobel filter is introduced for calculating the gradient in the x and y directions.
+     - X-gradient emphasizes horizontal edges.
+     - Y-gradient emphasizes vertical edges.
+   - To compute edge magnitude, treat gradients as a vector and use the square root of the sum of squares of X and Y gradients.
+   - The gradient magnitude image can be enhanced by scaling (e.g., multiplying by 2).
+
+4. **Noise in Gradients:**
+   - Noise can introduce unwanted gradients. 
+   - Applying a Gaussian filter smooths the image before calculating gradients, reducing noise effects.
+
+5. **Derivative of Gaussian:**
+   - Instead of applying Gaussian and Sobel filters separately, convolve the Gaussian kernel with the derivative kernel to create the "Derivative of Gaussian" kernel.
+   - This method simplifies the process and reduces noise while detecting edges.
+
+6. **canny Edge Detection:**
+   - Starts with Gaussian filtering and gradient computation.
+   - **Non-Maximum Suppression**: 
+     - Ensures only local maxima (strongest edges) are kept, removing weaker neighbors.
+   - **Double Thresholding**: 
+     - Two thresholds are applied: high threshold for strong edges and low threshold for probable edges.
+   - **Edge Linking**: 
+     - Probable edges are confirmed if connected to strong edges; otherwise, they are discarded.
+
+7. **MATLAB and canny Edge Detection:**
+   - MATLAB’s `edge` function is used to apply canny edge detection with automatic or custom threshold values.
+   - Adjustable parameters include thresholds and the amount of smoothing.
+
+8. **Laplacian of Gaussian Filter:**
+   - The Laplacian operator detects edges by finding zero crossings in the second derivative of the image.
+   - Direct use of the Laplacian operator creates noisy results.
+   - Solution: Combine Gaussian filtering and Laplacian filtering into the "Laplacian of Gaussian" (LoG) to reduce noise and produce cleaner edge detection.
+
+9. **Visualizing Filters and Edges:**
+   - Visualization of Gaussian and derivative filters using large kernels helps to understand their shapes and effects.
+   - Laplacian of Gaussian produces cleaner edge maps by detecting zero crossings more effectively.
+
+10. **Required Reading:**
+    - **Section 7.2** for detailed understanding of edge detection.
+    - **Further Reading**: "Crisp Boundary Detection Using Point-Wise Mutual Information" by Filip Izola et al. (2014). The paper discusses a statistical approach to selecting meaningful edges.
+
+11. **Conclusion:**
+    - Edge detection methods are crucial for image analysis.
+    - Next lecture: Introduction to convolutional neural networks.
+
+
+
 # Deep Learning
 
 # Signals & Images
