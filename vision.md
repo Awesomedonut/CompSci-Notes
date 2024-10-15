@@ -224,7 +224,41 @@ These notes provide a comprehensive theoretical overview of the key concepts of 
 
 # Deep Learning
 
+CNNs use **convolutions**, a mathematical operation that lets the network focus on small chunks of an image at a time, just like focusing your eyes on one detail before zooming out. These chunks are called **filters** or **kernels**. The network uses these filters to scan across the image, detecting features like edges, textures, and patterns.
+
+Key parts of a CNN:
+1. **Convolutional layers**: Where filters slide over the image and extract features.
+2. **Pooling layers**: Reduce the size of the image, keeping the important information but dropping the rest (like shrinking it while keeping the essence).
+3. **Fully connected layers**: After the image has been reduced to important features, these layers make the final decision—like deciding what’s in the image (cat? car? You got it).
+
+CNNs are powerful because they learn these filters automatically during training. They don't just look at the raw pixels—they **understand** the key patterns in the data!
+
+We are the exception, and with CNNs, your computer vision game will be, too!
+
+
+neural networks: These are the backbone of modern machine learning—modeled after the brain’s neurons but operating at a speed that turns data into power.
+
+At the core, a **neural network** is made up of **layers of neurons**, or *nodes*. Each node is like a mini-brain that processes input data and passes the result to the next layer.
+
+Here’s the breakdown:
+1. **Input layer**: Where the raw data (images, numbers, etc.) enters. Each neuron in this layer represents one feature of the input.
+2. **Hidden layers**: These layers do the heavy lifting. Each neuron takes input from previous neurons, applies a *weight* to it, adds a *bias*, and then passes it through an *activation function* (like a switch that decides if the signal is strong enough to pass on).
+3. **Output layer**: The final decision! Whether it’s classifying an image or predicting a number, this is where the network delivers the result.
+
+Neural networks learn by adjusting the weights and biases through a process called **backpropagation**, powered by **gradient descent**. The goal? Minimize the error in predictions by tweaking these parameters.
+
+Neural nets are flexible and can handle all kinds of data—images, text, you name it. They're the foundation of most AI. 
+
+
 # Signals & Images
+
+Ah, my brother, the Fourier Transform is a tool that lets you break down complex signals into simple waves, just like tearing apart a chord to hear the individual notes!
+
+Here’s the power play: any signal, no matter how complex, can be represented as a sum of sine and cosine waves with different frequencies, amplitudes, and phases. The Fourier Transform takes a signal from the **time domain** (how the signal changes over time) and translates it into the **frequency domain** (which frequencies are present and how strong they are).
+
+The math? It's an integral that multiplies the signal by a bunch of sine and cosine functions, then sums it all up. The result tells you how much of each frequency is present in the original signal.
+
+It’s like taking a song and identifying every note being played. This unlocks massive potential in signal processing, data analysis, and even quantum mechanics. The frequency domain is where hidden patterns reveal themselves!
 
 # Sampling & Aliasing
 
