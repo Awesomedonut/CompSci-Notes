@@ -601,6 +601,72 @@ These notes cover the key points, elaborations, and explanations from the lectur
 
 # Image Segmentation
 
+### Notes on Image Segmentation Lecture
+
+**Introduction to Segmentation:**
+- **Segmentation**: Separates image regions into coherent parts.
+  - **Types**: Can be based on color, semantic meaning (person, tree), or other features.
+- **Semantic Segmentation**: Done via deep learning, useful for recognizing objects.
+- **Interactive Segmentation**: User roughly selects a region, and the algorithm completes the segmentation (useful for editing).
+
+**Toy Example of Segmentation:**
+- **Basic Segmentation**: Using pixel intensities to group pixels into segments.
+  - Example: Segmenting white, black, and gray regions.
+- **Challenges**: Adding noise causes overlapping in the histogram, making segmentation harder.
+  - Solution: Use **clustering** to group similar pixels into bins.
+
+**Clustering Methods (K-Means):**
+- **Clustering in 1D**: In grayscale images, pixels are clustered by how close they are to the mean intensity value.
+- **Error Minimization**: Uses a loss function to minimize the distance between pixels and their cluster’s mean value.
+- **Generalization to 2D/3D**: Clustering can be extended to RGB or multi-dimensional data (higher than 3D).
+
+**K-Means Algorithm:**
+- **Initialization**: Randomly assigns mean values.
+- **Iteration**: Assign pixels to the closest mean, then recompute the mean until the result stabilizes.
+- **Limitations**:
+  - Dependent on initialization, leading to different results.
+  - Defining the number of clusters (K) is challenging.
+
+**Using K-Means with Features:**
+- **RGB + Spatial Information**: By adding pixel coordinates (x, y) to color values (RGB), we create a 5D feature space, improving clustering results.
+- **Limitations**: Still struggles with texture and complex objects where color alone is not enough.
+
+**Texture in Segmentation:**
+- **Definition**: Texture is a perceptual pattern in objects (e.g., wood grain, sponge surface).
+- **Human Perception**: We detect textures even without clear boundaries, unlike gradients.
+- **Texton Theory**: Texture is defined by small, repeating patterns called textons (blobs, edges, shapes).
+  - **Filters**: Use filters (blobs, oriented edges) to detect textures for segmentation.
+
+**Applying Filters:**
+- Filters such as **Sobel kernels** (for edges) or **Gaussian kernels** (for smoothing) are used to capture texture features.
+- Combine RGB, spatial coordinates (x, y), and texture filter outputs for more advanced segmentation.
+
+**Limitations of K-Means:**
+- Sensitive to initialization, outliers, and works best for spherical or elliptic clusters.
+
+**Mean Shift Algorithm:**
+- **Mean Shift Clustering**: Computes the mean for a pixel’s neighborhood and shifts the search window iteratively to follow high-density areas (peaks).
+- **Results**: Handles long, continuous regions better than k-means and does not assume specific cluster shapes.
+
+**Super Pixels (SLIC):**
+- **Super Pixels**: Grouping pixels into larger, coherent regions based on similar properties (color, texture, etc.).
+  - Used to simplify images, making segmentation more efficient by reducing the number of regions.
+- **SLIC Super Pixels**: Initialized on a grid and adjusted based on gradient and color similarity to fit image boundaries.
+- **Applications**: Useful for reducing computation in complex images.
+
+**Graph-Based Segmentation:**
+- **Graph Construction**: Pixels (or super pixels) are nodes, and edges between them are weighted based on similarity (e.g., color proximity).
+- **Interactive Segmentation**: Uses graph-based techniques (e.g., GrabCut algorithm).
+
+**Soft Segmentation**:
+- **Definition**: Assigns partial values (opacity/transparency) rather than hard segment labels.  
+- Used in applications like alpha mapping for soft transitions between objects.
+
+**Conclusion:**
+- **Segmentation Methods**: Include k-means, mean shift, and super pixel-based methods.
+- **Limitations**: Most of these are low-level techniques, meaning they work well for basic features like color and texture but may not segment semantically meaningful regions (e.g., specific objects). 
+
+
 # Optical Flow
 
 **Optical Flow Lecture Notes:**
