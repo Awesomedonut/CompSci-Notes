@@ -599,6 +599,25 @@ These notes cover the key points, elaborations, and explanations from the lectur
 
 # RANSAC
 
+
+The lecture covers the use of RANSAC (Random Sample Consensus) in computer vision to handle outlier matches when estimating transformations between images. Key points include:
+
+- **Outlier Problem**: Incorrect matches in image feature detection can lead to inaccurate transformations. RANSAC helps remove these outliers.
+  
+- **Line Fitting Example**: RANSAC tests multiple hypotheses (e.g., different lines) to find the one with the most inliers (points that agree with the hypothesis).
+
+- **Hypotheses and Testing**: RANSAC generates many random hypotheses and picks the one with the highest inlier count, rather than using mathematical optimization.
+
+- **Transformation in Image Matching**: In image matching, a single match can define a transformation (e.g., translation), and RANSAC helps in picking the best match, ignoring outliers.
+
+- **Robustness**: RANSAC can handle up to 50% outliers and still provide correct transformations, making it highly useful in real-world applications.
+
+- **Parameters**: RANSAC involves parameters like inlier thresholds (to determine which points are inliers) and the number of rounds or hypotheses to test, depending on the problem's complexity.
+
+- **Application to Panoramas**: RANSAC is used for stitching panoramic images by first detecting features, matching them, applying RANSAC for homography estimation, and finally combining the images.
+
+The lecture ends by recommending specific reading (Section 8.1) and a MATLAB tutorial on feature-based panoramic image stitching, which demonstrates the concepts discussed.
+
 # Image Segmentation
 
 ### Notes on Image Segmentation Lecture
