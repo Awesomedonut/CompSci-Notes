@@ -26,3 +26,16 @@ match case:
     case _:
         print("wuwuwhfdfd")
 ```
+u gotta use the keyword "case". u cant just do whatever name u want :,)
+
+
+
+modulous
+result = dividend % divisor
+
+
+
+
+
+`if not blahblah` checks if blahblah is None, False, 0, "", [], etc -- epic poggers version of 
+`if blahblah != None` which only checks for None and not the "falsy" vals
